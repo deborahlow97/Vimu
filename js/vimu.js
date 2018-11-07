@@ -40,7 +40,7 @@ $(document).ready(function () {
 
     // set color picker
     setColorPicker();
-
+    initialisePreview();
 });
 
 function setTabbing() {
@@ -742,3 +742,9 @@ function editShape(selectedShape){
     keyData[currKey].shape = shapeType;
  }
  
+ function initialisePreview(){
+    var c = document.getElementById("previewCanvas");
+    var ctx = c.getContext("2d");
+    ctx.rect(20, 20, 150, 100);
+    ctx.clip();
+ }

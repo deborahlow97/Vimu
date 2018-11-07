@@ -819,9 +819,13 @@
                         <div id="visuals-contents">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img src="https://media1.tenor.com/images/8373dd8b18dacf6292f73f004e2ac454/tenor.gif?itemid=8025388"
-                                         class="preview-image" height="100" width="100">
+                                    <div>
                                     <label for="position-select" class="title-label">Preview</label>
+                                </div>
+                                <div>
+                                    <canvas class="preview" id="previewCanvas" width="150" height="100"></canvas>
+                                </div>
+
                                 </div>
                                 <div class="col-md-3" id="visual-container-1">
                                     <form class="form-inline">
@@ -1295,7 +1299,7 @@
 
 <script type="text/javascript" src="js/vimu.js"></script>
 <script type="text/paperscript" src="js/visuals.js" canvas="myCanvas"></script>
-
+<script type="text/paperscript" src="js/visuals.js" canvas="previewCanvas"></script>
 <script>
     // var slider = document.getElementById("quantization-amount");
     // var output = document.getElementById("quantization-amount-value");
