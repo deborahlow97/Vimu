@@ -745,6 +745,15 @@ function editShape(selectedShape){
  function initialisePreview(){
     var c = document.getElementById("previewCanvas");
     var ctx = c.getContext("2d");
+    ctx.clearRect(0, 0, 300, 300); // clear canvas
     ctx.rect(20, 20, 150, 100);
-    ctx.clip();
+    ctx.save();
+    ctx.translate(150, 150);
+
+    ctx.scale(0.95, 0.95);
+
+ }
+
+ function animateShapes(){
+
  }

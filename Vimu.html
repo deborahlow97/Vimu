@@ -822,8 +822,12 @@
                                     <div>
                                     <label for="position-select" class="title-label">Preview</label>
                                 </div>
-                                <div>
-                                    <canvas class="preview" id="previewCanvas" width="150" height="100"></canvas>
+                                <div class="preview-container" width="150" height="100">
+                                    <div class="triangle"></div>
+                                    <div class="circle"></div>
+                                    <div class="roundedRectangle"></div>
+                                    <!-- <canvas class="preview" id="previewCanvas" width="150" height="100"></canvas> -->
+
                                 </div>
 
                                 </div>
@@ -1299,7 +1303,6 @@
 
 <script type="text/javascript" src="js/vimu.js"></script>
 <script type="text/paperscript" src="js/visuals.js" canvas="myCanvas"></script>
-<script type="text/paperscript" src="js/visuals.js" canvas="previewCanvas"></script>
 <script>
     // var slider = document.getElementById("quantization-amount");
     // var output = document.getElementById("quantization-amount-value");

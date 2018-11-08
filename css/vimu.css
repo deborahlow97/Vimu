@@ -747,10 +747,33 @@ p.soundname {
     margin-right: 10px;
 }
 
-.preview{
+.preview-container{
     border: 1px solid #AED792;
 }
-.
+
+.triangle{
+    width: 0;
+	height: 0;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+    border-bottom: 50px solid #555;
+}
+
+.circle {
+    height: 50px;
+    width: 50px;
+    background-color: #555;
+    border-radius: 50%;
+  }
+
+  .roundedRectangle{
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    height: 50px;
+    width: 100px;
+    background-color: #555;
+  }
 /* End Visuals */
 
 /* Tabbing */
@@ -794,8 +817,8 @@ p.soundname {
     color: #70a945;
 }
 .tab-contents {
-    padding-top: 0.3em;
-    padding-bottom: 2em;
+    padding-top: 1em;
+    padding-bottom: 1.5em;
     padding-left: 2em;
     border: 1px solid #ddd;
 }
