@@ -24,6 +24,45 @@ function onKeyUp(event) {
     }
 }
 
+// function toggleClickKey(id, event){
+//     mouseClick = true;
+//     keyType = id.substring(3).toUpperCase;
+
+// }
+
+function onMouseDown(event){
+    // toggleClickKey(event);
+    // console.log(event)
+    console.log("hello");
+    // if(mouseClick){
+
+
+    // }
+    // console.log(keyType);
+    // if(mouseClick){
+    //     alert(keyType);
+    //     var shape = '';
+    //     var color;
+    
+    //     shape = keyData[keyType].shape;
+    //     color = keyData[keyType].color;
+    
+    //     // console.log(keyData[key].color);
+    //     switch (shape) {
+    //         case "circle":
+    //             displayCircle(color);
+    //             break;
+    //         case "roundedRectangle":
+    //             displayRect(color);
+    //             break;
+    //         case "triangle":
+    //             displayTriangle(color);
+    //             break;
+    //     }
+    // }
+    // mouseClick = false;
+}
+
 function displayCircle(color) {
     var maxPoint = new Point(view.size.width, view.size.height);
     var randomPt = Point.random();

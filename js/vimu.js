@@ -7,6 +7,9 @@ var wavesurfer;
 var firstTimeEditing = true;
 var zoomLevel = 0;
 var currKey;
+var tip = 0;
+var keyType;
+var mouseClick = false;
 
 $(document).ready(function () {
     $('#tab-container').hide();
@@ -122,6 +125,9 @@ function toggleEditing() {
 
     } else {
         // navigation bar
+        console.log(tip);
+        tip = 1;
+        console.log(tip);
         isEditing = true;
         $('#lock').addClass('active-btn');
         $('#lock > i').removeClass('fa-lock').addClass('fa-unlock');
@@ -662,6 +668,14 @@ function toggleLoop(element) {
 function setVisuals(element, key) {
     var color = keyData[key].color;
     $('#hue-demo').minicolors('value', color);
+    updatePreviewColour(color);
+}
+
+function updatePreviewColour(colour){
+    console.log(colour);
+    document.getElementById("styled-triangle").style.borderBottom="50px solid "+ colour;
+    document.getElementById("styled-circle").style.backgroundColor=colour;
+    document.getElementById("styled-roundedRectangle").style.backgroundColor=colour;
 }
 
 function setShapes(element, key){
@@ -740,6 +754,23 @@ function editShape(selectedShape){
     console.log(shapeType);
     console.log(currKey);
     keyData[currKey].shape = shapeType;
+
+    if(shapeType == "circle"){
+        console.log("YEY")
+        document.getElementById("styled-roundedRectangle").style.display="none";
+        document.getElementById("styled-circle").style.display="block";
+        document.getElementById("styled-triangle").style.display="none";
+    }
+    else if(shapeType == "triangle"){
+        document.getElementById("styled-roundedRectangle").style.display="none";
+        document.getElementById("styled-circle").style.display="none";
+        document.getElementById("styled-triangle").style.display="block";
+    }
+    else if(shapeType == "roundedRectangle"){
+        document.getElementById("styled-roundedRectangle").style.display="block";
+        document.getElementById("styled-circle").style.display="none";
+        document.getElementById("styled-triangle").style.display="none";
+    }
  }
  
  function initialisePreview(){
@@ -757,3 +788,29 @@ function editShape(selectedShape){
  function animateShapes(){
 
  }
+
+
+ function toggleClickKey(event){
+    ID = event.id;
+    mouseClick = true;
+    keyType = (ID).substring(3).toUpperCase();
+    console.log(keyType);
+    console.log("Inside toggleClickKey");
+}
+function tutorial() {
+    console.log(tip);
+
+    if(localStorage.getItem('popState') != 'shown' && tip == 1){
+        $("#tip-popup").fadeIn();
+        localStorage.setItem('popState','shown')
+    }
+
+    $('#tip-popup-close').click(function(e) // You are clicking the close button
+    {
+    $('#tip-popup').fadeOut();
+    });
+    $('#tip-popup').click(function(e) 
+    {
+    $('#tip-popup').fadeOut(); 
+    });
+}

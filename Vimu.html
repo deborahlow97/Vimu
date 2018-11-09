@@ -24,12 +24,21 @@
     <div class="container">
         <div class="navbar-brand" id="logo">VIMU</div>
         <div class="icons">
-            <button type="button" onclick="toggleEditing()" id="lock">
+            <button type="button" onclick="toggleEditing(); tutorial();" id="lock">
                 <i class="fa fa-lock fa-2x"></i>
             </button>
-            <button type="button">
+            <button type=type="button" id="info" data-toggle="popover" data-html="true" data-placement="bottom">
                 <i class="fa fa-info-circle fa-2x"></i>
             </button>
+            <div id="info-popover">
+                <h5>VIMU</h5>
+                <div class="information">
+                    <p>Vimu is an visual sound kit and music editing website. Each letter or number typed corresponds to a 
+                        certain sound clip and visual. </p>
+                    <p>Start customising your own keyboard sound mappings by dragging an audio file onto a key of your choice!<br>
+                    </p>
+                </div>
+            </div>
             <button type="button" id="settings" data-toggle="popover" data-html="true" data-placement="bottom"
                     onclick="setSettings()">
                 <i class="fa fa-cog fa-2x"></i>
@@ -292,7 +301,7 @@
                     </div>
                 </div>
                 <div class="keyboard-row row justify-content-md-center">
-                    <div class="keyboard-key col-sm-1 mx-1 row2">
+                    <div class="keyboard-key col-sm-1 mx-1 row2" id="keyQ">
                         <h6>Q</h6>
                         <div ondrop="drop(event)" ondragover="allowDrop(event)">
                             <p draggable="true" ondragstart="drag(event)" id="Q">bubbles.mp3</p>
@@ -692,7 +701,7 @@
                             <li><a href="#tab01" class="visual-title"><i class="fa fa-music" style="font-size:20px"></i>
                                 AUDIO</a></li>
                             <li><a href="#tab02" class="visual-title"><i class="fa fa-paint-brush"
-                                                                         style="font-size:20px"></i> VISUALS</a></li>
+                                style="font-size:20px"></i> VISUALS</a></li>
                         </ul>
                     </div>
                     <div class="tab-select-outer">
@@ -823,11 +832,12 @@
                                     <label for="position-select" class="title-label">Preview</label>
                                 </div>
                                 <div class="preview-container" width="150" height="100">
-                                    <div class="triangle"></div>
-                                    <div class="circle"></div>
-                                    <div class="roundedRectangle"></div>
+                                    <div id="theShape">
+                                        <div class="triangle" id="styled-triangle"></div>
+                                        <div class="circle" id="styled-circle"></div>
+                                        <div class="roundedRectangle" id="styled-roundedRectangle"></div>
+                                    </div>
                                     <!-- <canvas class="preview" id="previewCanvas" width="150" height="100"></canvas> -->
-
                                 </div>
 
                                 </div>
@@ -906,9 +916,17 @@
                     </div>
                 </div>
             </div>
+
+            <div>
+                <div id="tip-popup" style="transform-origin: center center 0px; left: 50%; top: 50%; display:none" class="overlay-content centered-x centered-y active">
+                    <h2 class="tip-style">Tip</h2>
+                    <p class="message">Drag audio files into key to map an audio to a key.</p>
+                    <button class="button expand large js-close-overlay">Close</button>
+                </div>
         </div>
     </div>
 </div>
+<canvas id="myCanvas1"></canvas>
 </div>
 
 <script src="library/jquery/jquery.min.js"></script>
@@ -1303,6 +1321,8 @@
 
 <script type="text/javascript" src="js/vimu.js"></script>
 <script type="text/paperscript" src="js/visuals.js" canvas="myCanvas"></script>
+<script type="text/paperscript" src="js/visuals.js" canvas="myCanvas1"></script>
+
 <script>
     // var slider = document.getElementById("quantization-amount");
     // var output = document.getElementById("quantization-amount-value");
