@@ -27,6 +27,15 @@ $(document).ready(function () {
         content: function () {
             return $('#settings-popover').html();
         }
+    
+    }).on('shown.bs.popover', function () {
+    });
+    $('#info').popover({
+        html: true,
+        content: function () {
+            return $('#info-popover').html();
+        }
+    
     }).on('shown.bs.popover', function () {
     });
 

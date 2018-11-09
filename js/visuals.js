@@ -24,16 +24,10 @@ function onKeyUp(event) {
     }
 }
 
-// function toggleClickKey(id, event){
-//     mouseClick = true;
-//     keyType = id.substring(3).toUpperCase;
-
-// }
-
 function onMouseDown(event){
     // toggleClickKey(event);
     // console.log(event)
-    console.log("hello");
+    //console.log("hello");
     // if(mouseClick){
 
 

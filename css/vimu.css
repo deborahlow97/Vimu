@@ -87,6 +87,10 @@ canvas {
     display: none;
     width: 200px;
 }
+
+.info-title{
+    text-align: center;
+}
 #keyboard-audio-visual {
     width: inherit;
     height: 76%;
@@ -753,8 +757,11 @@ p.soundname {
 
 .preview-container{
     border: 1px solid #AED792;
+    width: 120px;
+    height: 75px;;
 }
-
+/* 
+.preview-shape-container */
 .triangle{
     width: 0;
     height: 0;
